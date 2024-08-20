@@ -27,7 +27,8 @@ power.addEventListener("click", () => {
 boxes.forEach(box => {
   box.addEventListener("click", e => {
     if (canSwap) {
-      clearTimeout(timeoutId)
+      if(timeoutId) clearTimeout(timeoutId)
+      err.classList.remove("show-err")
       const color = colors[Math.floor(Math.random() * colors.length)];
       e.target.style = `background-color: ${color.hex};`;
     } else {
