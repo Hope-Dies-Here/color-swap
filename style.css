@@ -56,6 +56,28 @@ body {
     transform: translateX(0px);
   }
 }
+
+.err-msg{
+  visibility: hidden;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  right: 50%;
+  width: 8rem;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: .3rem;
+  opacity: 0;
+  transition: .75s;
+}
+.show-err{
+    visibility: visible;
+    opacity: .7;
+}
+
 .container {
   display: grid;
   gap: 1rem;

@@ -3,10 +3,12 @@ const power = document.querySelector("#toggle-image");
 const status = document.querySelector("#toggle-text");
 const info = document.querySelector("#info");
 const infoText = document.querySelector("#info-text");
+const err = document.querySelector("#err-msg");
 import { colors } from "./colors.js";
 
 //screen controller
 let canSwap = true;
+let timeoutId = false
 power.addEventListener("click", () => {
   if (canSwap) {
     canSwap = false;
@@ -25,9 +27,15 @@ power.addEventListener("click", () => {
 boxes.forEach(box => {
   box.addEventListener("click", e => {
     if (canSwap) {
-      console.log(e.target);
+      clearTimeout(timeoutId)
       const color = colors[Math.floor(Math.random() * colors.length)];
       e.target.style = `background-color: ${color.hex};`;
+    } else {
+      if(timeoutId) clearTimeout(timeoutId)
+      err.classList.add("show-err")
+      timeoutId = setTimeout(function() {
+        err.classList.remove("show-err")
+      }, 1500);
     }
   });
 });
