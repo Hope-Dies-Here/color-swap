@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Exo 2", Sans-Serif;
+}
+.info {
+  position: absolute;
+  top: 20%;
+  right: .2rem;
+  width: 2.5rem;
+  transform: rotate(-25deg);
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  animation: scaleIt 10s ease infinite;
+}
+.info-text{
+  position: absolute;
+  right: 1rem;
+  top: 25%;
+  width: 50%;
+  background-color: black;
+  padding: .5rem 1rem;
+  font-size: .8rem;
+  border-radius: .5rem;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+.displayInfo{
+  visibility: visible;
+  opacity: .8;
+  transition: .5s;
+}
+@keyframes scaleIt{
+  0%{
+    scale: 1;
+    transform: translateX(0px);
+  }
+  50%{
+    scale: 1.01;
+    transform: translateX(-5px);
+  }
+  100%{
+    scale: 1;
+    transform: translateX(0px);
+  }
+}
+.container {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  justify-items: center;
+  align-items: center;
+  width:;
+  margin: auto;
+}
+.header {
+  display: grid;
+  gap: 1rem;
+  margin-block: 0rem 1rem;
+  text-align: center;
+}
+.header .title {
+  background-color: #0b5ec8;
+  padding: 0.75rem;
+  color: white;
+  width: 20rem;
+  margin: auto;
+  border-radius: 0.5rem;
+}
+.header .description {
+  margin: auto;
+  width: 15rem;
+}
+
+.color-boxes {
+  display: grid;
+  width: 20rem;
+  gap: 1rem;
+  /* border: 1px solid green; */
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.box {
+  border-radius: 0.75rem;
+  border: 2px solid #333;
+  width: 9rem;
+  height: 9rem;
+  background-color: red;
+}
+
+.box:nth-child(1) {
+  background-color: #1171ba;
+}
+.box:nth-child(2) {
+  background-color: gold;
+}
+.box:nth-child(3) {
+  background-color: #f36767;
+}
+.box:nth-child(4) {
+  background-color: black;
+}
+.box:nth-child(5) {
+  background-color: white;
+}
+.box:nth-child(6) {
+  background-color: #0e8c7f;
+}
+
+.toggle {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  gap: 0.25rem;
+}
+.toggle img {
+  width: 2.618rem;
+}
+.toggle p {
+  color: green;
+  font-weight: bold;
+  font-size: 1.618rem;
+  stroke: 1;
+}
