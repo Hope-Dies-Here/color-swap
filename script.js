@@ -9,6 +9,7 @@ import { colors } from "./colors.js";
 //screen controller
 let canSwap = true;
 let timeoutId = false
+let clickTimeout = false
 power.addEventListener("click", () => {
   if (canSwap) {
     canSwap = false;
@@ -28,15 +29,26 @@ boxes.forEach(box => {
   box.addEventListener("click", e => {
     if (canSwap) {
       if(timeoutId) clearTimeout(timeoutId)
+      //if(clickTimeout) clearTimeout(clickTimeout)
+      
       err.classList.remove("show-err")
+      e.target.classList.add("click")
+      clickTimeout = setTimeout(function() {
+        e.target.classList.remove("click")
+      }, 250);
+      
       const color = colors[Math.floor(Math.random() * colors.length)];
       e.target.style = `background-color: ${color.hex};`;
+      
+
     } else {
       if(timeoutId) clearTimeout(timeoutId)
       err.classList.add("show-err")
+      
       timeoutId = setTimeout(function() {
         err.classList.remove("show-err")
       }, 1500);
+      
     }
   });
 });
