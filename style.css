@@ -29,6 +29,14 @@ body {
   opacity: 0;
   transition: .5s;
 }
+.info-text strong{
+}
+.info-text ul{
+  padding-left: 1rem;
+}
+.info-text li{
+  margin-block: .2rem;
+}
 .displayInfo{
   visibility: visible;
   opacity: .8;
@@ -73,7 +81,8 @@ body {
 }
 .header .description {
   margin: auto;
-  width: 15rem;
+  width: 12rem;
+  font-size: .9rem;
 }
 
 .color-boxes {
